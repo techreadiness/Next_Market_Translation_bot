@@ -1,83 +1,74 @@
-# 한국어 원본을 감시하여 글로벌 3개 국어로 자동 번역하는 두뇌 역할
 name: Next-Market-Global-Sync
 
 on:
   push:
     paths:
-      - 'ko/**' # ko 폴더 안의 파일이 수정될 때만 작동
+      - 'ko/**' # 한국어 폴더 수정 시 작동
     branches:
       - main
-  workflow_dispatch: # 관리자가 수동으로 버튼을 눌러 실행 가능
+  workflow_dispatch: # 수동 실행 버튼
 
 jobs:
-  translate-and-sync:
+  translate:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Code
         uses: actions/checkout@v3
 
-      - name: DeepL Multi-Translation Engine
+      - name: DeepL Translation Engine
         env:
           DEEPL_API_KEY: ${{ secrets.DEEPL_API_KEY }}
         run: |
-          # 1. 번역 대상 언어 설정 (전문 영어를 위해 EN-US 사용)
           TARGET_LANGS=("en" "zh" "ja")
           DEEPL_CODES=("EN-US" "ZH" "JA")
 
-          # 2. ko 폴더 존재 여부 확인
           if [ ! -d "ko" ]; then
-            echo "ko 폴더가 없습니다. 번역을 건너뜁니다."
+            echo "ko 폴더가 없습니다."
             exit 0
           fi
 
-          # 3. ko 폴더 내의 모든 마크다운 파일 탐색 (SUMMARY.md 제외)
-          find ko -name "*.md" -not -name "SUMMARY.md" | while read file; do
-            REL_PATH=${file#ko/} # 파일의 상대 경로 추출
-            
+          find ko -name "*.md" | while read file; do
+            REL_PATH=${file#ko/}
             for i in "${!TARGET_LANGS[@]}"; do
               LANG=${TARGET_LANGS[$i]}
               CODE=${DEEPL_CODES[$i]}
               TARGET_FILE="$LANG/$REL_PATH"
-
-              # 저장될 폴더 미리 생성
               mkdir -p "$(dirname "$TARGET_FILE")"
+              
+              # 1. 'Next Market' 단어 보호 (번역 제외 처리)
+              ORIGINAL_CONTENT=$(cat $file)
+              PROTECTED_CONTENT=$(echo "$ORIGINAL_CONTENT" | sed 's/Next Market/<span translate="no">Next Market<\/span>/g')
 
-              echo "번역 중: $file -> $TARGET_FILE ($CODE)"
-
-              # DeepL API 호출 (tag_handling=html 옵션으로 마크다운 문법 보호)
-              TRANSLATED=$(curl -s -X POST "https://api-free.deepl.com/v2/translate" \
+              # 2. DeepL API 호출
+              TRANSLATED_RAW=$(curl -s -X POST "[https://api-free.deepl.com/v2/translate](https://api-free.deepl.com/v2/translate)" \
                 -H "Authorization: DeepL-Auth-Key $DEEPL_API_KEY" \
-                -d "text=$(cat $file)" \
+                -d "text=$PROTECTED_CONTENT" \
                 -d "source_lang=KO" \
                 -d "target_lang=$CODE" \
                 -d "tag_handling=html" | jq -r '.translations[0].text')
-
-              # 번역 결과 파일 저장
-              if [ "$TRANSLATED" != "null" ] && [ -n "$TRANSLATED" ]; then
-                echo "$TRANSLATED" > "$TARGET_FILE"
-              else
-                echo "번역 실패: $file ($CODE)"
+              
+              # 3. 삽입했던 보호 태그 제거 (결과물 깔끔하게 유지)
+              if [ "$TRANSLATED_RAW" != "null" ] && [ -n "$TRANSLATED_RAW" ]; then
+                FINAL_CONTENT=$(echo "$TRANSLATED_RAW" | sed 's/<span translate="no">Next Market<\/span>/Next Market/g')
+                echo "$FINAL_CONTENT" > "$TARGET_FILE"
+                echo "Successfully translated $file to $TARGET_FILE"
               fi
             done
           done
 
       - name: Sync SUMMARY.md
         run: |
-          # 한국어 목차 구조를 영/중/일 폴더에도 동일하게 복제
-          # GitBook에서 각 폴더를 Root로 잡기 때문에 파일만 복사하면 됩니다.
           for lang in en zh ja; do
             if [ -f "ko/SUMMARY.md" ]; then
               mkdir -p "$lang"
               cp "ko/SUMMARY.md" "$lang/SUMMARY.md"
-              echo "목차 동기화 완료: $lang/SUMMARY.md"
             fi
           done
 
-      - name: Commit and Push Changes
+      - name: Commit and Push
         run: |
-          # 로봇 이름으로 변경사항을 GitHub에 반영
           git config --global user.name "Next-Market-Bot"
           git config --global user.email "bot@unifi.network"
           git add en/ zh/ ja/
-          git commit -m "docs: 한국어 기반 글로벌 다국어 자동 번역 완료" || echo "변경 사항 없음"
+          git commit -m "docs: Next Market 용어 보호 및 자동 번역 완료" || echo "No changes"
           git push origin main
