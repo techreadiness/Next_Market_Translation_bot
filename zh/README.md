@@ -1,0 +1,63 @@
+---
+图标：购物车
+元链接：
+  替代链接：
+    - https://app.gitbook.com/s/pt4moEMpSf4BGvjJCzQm/
+---
+
+# NEXT Market
+
+## NEXT Market
+
+* 面向游戏开发商与Web2玩家，提供全新自由经济体验的全球跨境游戏市场。
+* 玩家可通过与游戏账号1:1绑定，轻松进行游戏内道具交易；开发商则能基于全球稳定币实现收益化。
+
+<figure><img src=".gitbook/assets/NEXT Market_1.png" alt=""><figcaption></figcaption></figure>## LINE NEXT
+
+* 以构建Web3数字资产生态为目标，提供NEXT Market、Mini Dapp及基于LINE/Web的Web3钱包服务
+* 8个月内积累6500万活跃钱包与160万购买钱包 → 拥有亚洲最大规模钱包网络
+* 与Tether达成战略合作，打造亚洲数字美元网关
+
+<figure><img src=".gitbook/assets/NEXT Market_2.png" alt=""><figcaption></figcaption></figure>## NEXT Market核心功能
+
+### 1. 游戏嵌入式市场
+
+玩家无需额外登录，可直接通过游戏账号在游戏内访问市场并进行道具交易。
+
+### 2. 多币种网店
+
+提供支持全球本地支付及稳定币（USDt）结算的定制化网店环境。
+
+### 3. 跨境交易平台
+
+* 玩家仅凭游戏账号即可进行B2C/C2C道具交易
+* 买家
+  * 支持本地支付或稳定币结算
+  * 无需开设钱包，可直接通过游戏邮箱接收道具
+* 卖家
+  * 无手续费，稳定币即时结算
+  * 支持社交ID及OKX/Bitget钱包登录结算
+
+### 4. 稳定币奖励系统
+
+* 基于任务完成与游戏活跃度发放稳定币奖励
+* 玩家通过&quot;游戏→获取稳定币奖励→兑换&quot;流程参与游戏经济
+* 运用奖励稳定币进行二次消费或获取额外收益→形成再投资循环
+  * 稳定币奖励玩家二次消费占比达90%以上
+
+## 开发者入驻支持
+
+### 1. 营销支持
+
+* 提供游戏营销奖励金（根据入驻条件差异化）
+* 在LINE Dapp Portal内实现游戏奖励特色展示
+* 支持通过LINE NEXT官方OA发送消息
+
+### 2. 业务支持
+
+* 提供销售数据统计与分析仪表盘
+* 提供用户留存率洞察分析
+
+<figure><img src=".gitbook/assets/NEXT Market_3.png" alt=""><figcaption></figcaption></figure>## 咨询渠道
+
+nextmarket\_bd@linecorp.com
