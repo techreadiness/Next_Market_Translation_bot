@@ -1,8 +1,6 @@
 ---
 icon: cart-shopping
-metaLinks:
-  alternates:
-    - https://app.gitbook.com/s/pt4moEMpSf4BGvjJCzQm/
+metaLinks: {}
 ---
 
 # NEXT Market
@@ -12,13 +10,13 @@ metaLinks:
 * ゲーム開発者とWeb2ゲーマーに新たな自由経済の体験を提供するグローバルクロスボーダーゲームマーケットです。
 * ゲーマーはゲームとの1:1アカウント連携により、ゲーム内で手軽にアイテムを取引でき、ゲーム開発者はグローバルステーブルコイン基盤の収益化を実現できます。
 
-<figure><img src=".gitbook/assets/NEXT Market_1.png" alt=""><figcaption></figcaption></figure>## LINE NEXT
+\## LINE NEXT
 
 * Web3デジタル資産エコシステム構築を目標に、NEXT Market、Mini Dapp、LINE/WebベースのWeb3ウォレットサービスを提供
 * 8ヶ月間で6,500万のアクティブウォレットと160万の購入ウォレットを確保 → アジア最大規模のウォレットネットワークを保有
 * アジアデジタルドルゲートウェイに向けたテザーとの戦略的パートナーシップ締結
 
-<figure><img src=".gitbook/assets/NEXT Market_2.png" alt=""><figcaption></figcaption></figure>## NEXT Market 主要機能
+\## NEXT Market 主要機能
 
 ### 1. ゲーム埋め込みマーケット
 
@@ -58,6 +56,6 @@ metaLinks:
 * 売上統計及び分析ダッシュボード提供
 * ユーザーリテンションインサイト提供
 
-<figure><img src=".gitbook/assets/NEXT Market_3.png" alt=""><figcaption></figcaption></figure>## お問い合わせ先
+\## お問い合わせ先
 
 nextmarket\_bd@linecorp.com

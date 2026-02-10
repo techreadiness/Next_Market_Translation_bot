@@ -1,7 +1,7 @@
 ---
 metaLinks:
   alternates:
-    - https://app.gitbook.com/s/pt4moEMpSf4BGvjJCzQm/api
+    - https://app.gitbook.com/s/pt4moEMpSf4BGvjJCzQm/api-usage-guide
 ---
 
 # API 사용 가이드

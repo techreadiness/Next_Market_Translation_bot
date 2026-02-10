@@ -1,8 +1,6 @@
 ---
 icon: cart-shopping
-metaLinks:
-  alternates:
-    - https://app.gitbook.com/s/pt4moEMpSf4BGvjJCzQm/
+metaLinks: {}
 ---
 
 # NEXT Market
@@ -12,15 +10,11 @@ metaLinks:
 * 게임 개발사와 Web2 게이머에게 새로운 자유 경제의 경험을 제공하는 글로벌 크로스보더 게임 마켓입니다.
 * 게이머는 게임과의 1:1 계정연동을 통하여 인게임에서 손쉽게 아이템을 거래하고, 게임 개발사는 글로벌 스테이블 코인 기반의 수익화를 실현할 수 있습니다.
 
-<figure><img src=".gitbook/assets/NEXT Market_1.png" alt=""><figcaption></figcaption></figure>
-
 ## LINE NEXT
 
 * Web3 디지털 자산 생태계 구축을 목표로 NEXT Market, Mini Dapp, LINE/Web 기반의 Web3 Wallet 서비스 제공
 * 8개월 간 6,500만개의 액티브 월렛과 160만개의 구매 월렛을 확보 → 아시아 최대 규모의 월렛 네트워크 보유
 * 아시아 디지털 달러 게이트웨이를 위한 테더와의 전략적 파트너십 체결
-
-<figure><img src=".gitbook/assets/NEXT Market_2.png" alt=""><figcaption></figcaption></figure>
 
 ## NEXT Market 주요 기능
 
@@ -61,8 +55,6 @@ metaLinks:
 
 * 매출 통계 및 분석 대시보드 제공
 * 유저 리텐션 인사이트 제공
-
-<figure><img src=".gitbook/assets/NEXT Market_3.png" alt=""><figcaption></figcaption></figure>
 
 ## 문의처
 

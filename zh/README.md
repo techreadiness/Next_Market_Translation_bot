@@ -12,13 +12,13 @@
 * 面向游戏开发商与Web2玩家，提供全新自由经济体验的全球跨境游戏市场。
 * 玩家通过与游戏账号1:1绑定，可轻松进行游戏内道具交易；开发商则能基于全球稳定币实现收益化。
 
-<figure><img src=".gitbook/assets/NEXT Market_1.png" alt=""><figcaption></figcaption></figure>## LINE NEXT
+\## LINE NEXT
 
 * 以构建Web3数字资产生态为目标，提供NEXT Market、Mini Dapp及基于LINE/Web的Web3钱包服务
 * 8个月内积累6500万活跃钱包与160万购买钱包 → 拥有亚洲最大规模钱包网络
 * 与Tether达成战略合作，打造亚洲数字美元网关
 
-<figure><img src=".gitbook/assets/NEXT Market_2.png" alt=""><figcaption></figcaption></figure>## NEXT Market核心功能
+\## NEXT Market核心功能
 
 ### 1. 游戏嵌入式市场
 
@@ -41,7 +41,7 @@
 ### 4. 稳定币奖励系统
 
 * 基于任务完成与游戏活跃度发放稳定币奖励
-* 玩家通过&quot;游戏→获取稳定币奖励→兑换&quot;流程参与游戏经济
+* 玩家通过"游戏→获取稳定币奖励→兑换"流程参与游戏经济
 * 运用奖励稳定币进行二次消费或获取额外收益→形成再投资循环
   * 稳定币奖励玩家二次消费占比达90%以上
 
@@ -58,6 +58,6 @@
 * 提供销售数据统计与分析仪表盘
 * 提供用户留存率洞察报告
 
-<figure><img src=".gitbook/assets/NEXT Market_3.png" alt=""><figcaption></figcaption></figure>## 咨询渠道
+\## 咨询渠道
 
 nextmarket\_bd@linecorp.com
