@@ -29,12 +29,12 @@ Provides a custom webshop environment supporting global local payments and stabl
   * Receive items in-game mailbox without opening a wallet
 * Sellers
   * Instant settlement in stablecoin with zero fees
-  * Settlement possible after logging in with Social ID and OKX/Bitget Wallet
+  * Settlement possible after logging in with Social ID or OKX/Bitget Wallet
 
 ### 4. Stablecoin Reward System
 
 * Stablecoin rewards distributed based on missions and gameplay
-* Gamers participate in the in-game economy through the flow: Play -&gt; Earn stablecoin rewards -&gt; Claim
+* Gamers participate in the in-game economy through the flow: Play -&gt; Earn Stablecoin Rewards → Claim
 * Rewarded stablecoins enable repurchases or additional profit generation → Contributing to a reinvestment cycle
   * Gamers receiving stablecoin rewards show over 90% repurchase rate
 
@@ -42,8 +42,8 @@ Provides a custom webshop environment supporting global local payments and stabl
 
 ### 1. Marketing Support
 
-* Provision of game marketing reward funds (varies based on onboarding conditions)
-* Featured exposure of game rewards within LINE&#x27;s Dapp Portal
+* Game marketing reward grants provided (varies based on onboarding conditions)
+* Featured exposure for game rewards within LINE&#x27;s Dapp Portal
 * Support for message distribution via LINE NEXT&#x27;s official OA
 
 ### 2. Business Support
@@ -52,5 +52,6 @@ Provides a custom webshop environment supporting global local payments and stabl
 * Provision of user retention insights
 
 ## Contact
+---
 
 nextmarket\_bd@linecorp.com
