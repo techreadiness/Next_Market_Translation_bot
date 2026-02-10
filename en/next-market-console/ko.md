@@ -2,7 +2,7 @@
 
 ## Introduction to NEXT Market Console
 
-**NEXT Market Console** is a management tool that provides the main API functions offered by NEXT Market in a **web-based console format**. It supports the easy and intuitive registration and management of **items, products, and missions** during development and operation.
+**NEXT Market Console** is a management tool that provides the main API functions offered by NEXT Market in a **web-based console format**. It supports the **easy and intuitive registration and management of items, products, and missions during development and operation processes**.
 
 ## Accessing the NEXT Market Console
 
