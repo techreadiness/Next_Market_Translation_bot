@@ -57,5 +57,6 @@ metaLinks: {}
 * 유저 리텐션 인사이트 제공
 
 ## 문의처
+---
 
 nextmarket\_bd@linecorp.com
