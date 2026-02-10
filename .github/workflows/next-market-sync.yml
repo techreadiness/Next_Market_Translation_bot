@@ -1,69 +1,85 @@
-# 한국어(ko) 폴더를 감시하여 영어(en), 중국어(zh), 일본어(ja)로 자동 번역
-name: Next-Market-Global-Sync
+name: Next-Market-Smart-Sync
 
 on:
   push:
     paths:
-      - 'ko/**' # 한국어 폴더 내 파일 변경 시에만 작동
+      - 'ko/**' # 한국어 폴더 변경 시 작동
     branches:
-      - main
-  workflow_dispatch: # 수동 실행 버튼
+      - main # 브랜치 이름을 변경하셨다면 이 이름을 맞춰주세요
+  workflow_dispatch: 
 
 jobs:
-  build-and-translate:
+  translate:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Code
         uses: actions/checkout@v3
+        with:
+          fetch-depth: 0 # 변경된 파일을 추적하기 위해 전체 히스토리를 가져옵니다
 
-      - name: Set up Translation Engine
+      - name: Get Changed Files
+        id: changed-files
+        uses: tj-actions/changed-files@v41
+        with:
+          files: ko/**/*.md # ko 폴더 안의 마크다운 파일만 감시
+
+      - name: DeepL Smart Translation
+        if: steps.changed-files.outputs.any_changed == 'true'
         env:
           DEEPL_API_KEY: ${{ secrets.DEEPL_API_KEY }}
         run: |
-          # 1. 대상 언어 및 코드 정의
           TARGET_LANGS=("en" "zh" "ja")
           DEEPL_CODES=("EN-US" "ZH" "JA")
 
-          # 2. ko 폴더 내의 모든 .md 파일 탐색 (SUMMARY.md 포함)
-          # 이전 버전과 달리 SUMMARY.md를 제외하지 않고 모두 번역 루프에 넣습니다.
-          find ko -name "*.md" | while read file; do
-            REL_PATH=${file#ko/} # ko/ 이후의 상대 경로 추출
+          # 변경되거나 추가된 파일 리스트만 가져옵니다
+          for file in ${{ steps.changed-files.outputs.all_changed_files }}; do
+            echo "변화 감지됨: $file"
+            REL_PATH=${file#ko/}
             
             for i in "${!TARGET_LANGS[@]}"; do
               LANG=${TARGET_LANGS[$i]}
               CODE=${DEEPL_CODES[$i]}
               TARGET_FILE="$LANG/$REL_PATH"
 
-              # 저장될 폴더 생성
               mkdir -p "$(dirname "$TARGET_FILE")"
 
-              echo "Translating $file to $TARGET_FILE ($CODE)..."
-
-              # 'Next Market' 단어 보호 로직 추가
+              # 'Next Market' 보호 및 번역 로직
               ORIGINAL_CONTENT=$(cat "$file")
               PROTECTED_CONTENT=$(echo "$ORIGINAL_CONTENT" | sed 's/Next Market/<span translate="no">Next Market<\/span>/g')
 
-              # DeepL API 호출
-              # tag_handling=html 옵션은 [제목](link.md) 구조에서 제목만 번역하고 링크는 보존합니다.
-              TRANSLATED_RAW=$(curl -s -X POST "https://api-free.deepl.com/v2/translate" \
+              echo "DeepL 번역 전송 ($CODE): $file"
+              
+              RESPONSE=$(curl -s -X POST "https://api-free.deepl.com/v2/translate" \
                 -H "Authorization: DeepL-Auth-Key $DEEPL_API_KEY" \
                 -d "text=$PROTECTED_CONTENT" \
                 -d "source_lang=KO" \
                 -d "target_lang=$CODE" \
-                -d "tag_handling=html" | jq -r '.translations[0].text')
+                -d "tag_handling=html")
 
-              # 번역 결과 저장 및 보호 태그 복구
-              if [ "$TRANSLATED_RAW" != "null" ] && [ -n "$TRANSLATED_RAW" ]; then
+              TRANSLATED_RAW=$(echo "$RESPONSE" | jq -r '.translations[0].text // empty')
+
+              if [ -n "$TRANSLATED_RAW" ] && [ "$TRANSLATED_RAW" != "null" ]; then
                 FINAL_CONTENT=$(echo "$TRANSLATED_RAW" | sed 's/<span translate="no">Next Market<\/span>/Next Market/g')
                 echo "$FINAL_CONTENT" > "$TARGET_FILE"
               fi
             done
           done
 
-      - name: Commit and Push Changes
+      - name: Sync SUMMARY.md
+        run: |
+          # 목차는 파일 크기가 작으므로 매번 동기화해도 무방합니다
+          for lang in en zh ja; do
+            if [ -f "ko/SUMMARY.md" ]; then
+              mkdir -p "$lang"
+              cp "ko/SUMMARY.md" "$lang/SUMMARY.md"
+            fi
+          done
+
+      - name: Commit and Push
+        if: steps.changed-files.outputs.any_changed == 'true'
         run: |
           git config --global user.name "Next-Market-Bot"
           git config --global user.email "bot@unifi.network"
           git add en/ zh/ ja/
-          git commit -m "docs: SUMMARY.md를 포함한 모든 문서 자동 번역 완료" || echo "No changes"
+          git commit -m "docs: 변경된 파일만 선별 번역 완료" || echo "No changes"
           git push origin main
