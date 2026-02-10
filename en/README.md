@@ -29,10 +29,10 @@ Provides a custom webshop environment supporting global local payments and stabl
 
 ### 3. Cross-Border Marketplace
 
-* Gamers can trade B2C/C2C items using only their in-game account.
-* Buyer
-  * Pay via local payment or stablecoin
-  * Receive items in-game mailbox without opening a wallet
+* Gamers can conduct B2C/C2C item transactions using only their in-game accounts.
+* Buyers
+  * Pay via local payment methods or stablecoins
+  * Receive items directly in their in-game mailbox without opening a wallet
 * Seller
   * Instant settlement in stablecoin with zero fees
   * Settlement possible after logging in with Social ID and OKX/Bitget Wallet
