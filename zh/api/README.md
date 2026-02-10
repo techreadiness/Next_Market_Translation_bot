@@ -7,9 +7,9 @@ metaLinks:
 
 ### 预览环境
 
-游戏端 ➡️ 商店接口: [    https://app-sdk.nextmarket.games​](https://app-sdk.nextmarket.games)
+游戏端 ➡️ 商店接口：[    https://app-sdk.nextmarket.games​](https://app-sdk.nextmarket.games)
 
-商店端 ➡️ 游戏接口: 游戏服务器域名或IP及端口
+商店端 ➡️ 游戏接口：游戏服务器域名或IP及端口
 
 ### 正式环境
 

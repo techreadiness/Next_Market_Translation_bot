@@ -29,19 +29,19 @@ Provides a custom webshop environment supporting global local payments and stabl
 
 ### 3. Cross-Border Marketplace
 
-* Gamers can trade B2C/C2C items using only their in-game accounts.
+* Gamers can conduct B2C/C2C item transactions using only their in-game accounts.
 * Buyers
-  * Pay via local payment or stablecoin
-  * Receive items in-game mailbox without opening a wallet
-* Sellers
+  * Pay via local payment methods or stablecoins
+  * Receive items directly in their in-game mailbox without opening a wallet
+* Seller
   * Instant settlement in stablecoin with zero fees
   * Settlement possible after logging in with Social ID and OKX/Bitget Wallet
 
 ### 4. Stablecoin Reward System
 
 * Stablecoin rewards distributed based on missions and gameplay
-* Gamers participate in the in-game economy through the flow: Play -&gt; Earn stablecoin rewards -&gt; Claim
-* Rewarded stablecoins enable repurchases or additional profit generation → Contributing to a reinvestment cycle
+* Gamers participate in the in-game economy through the play -&gt; earn stablecoin rewards -&gt; claim flow
+* Rewarded stablecoins enable repurchases or additional profit generation → contributing to a reinvestment cycle
   * Gamers receiving stablecoin rewards show over 90% repurchase rate
 
 ## Developer Onboarding Support

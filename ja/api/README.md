@@ -13,6 +13,6 @@ Store ➡️ Gameエンドポイント: ゲーム側サーバーのドメイン�
 
 ### Prod
 
-Game ➡️ Store エンドポイント: [https://sdk.nextmarket.games](https://sdk.nextmarket.games)
+Game ➡️ Store endpoint: [https://sdk.nextmarket.games​](https://sdk.nextmarket.games)
 
-Store ➡️ Game エンドポイント: ゲーム側サーバーのドメインまたはIPとポート
+Store ➡️ Game endpoint: ゲーム側サーバーのドメインまたはIPとポート
