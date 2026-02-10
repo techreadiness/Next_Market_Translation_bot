@@ -16,7 +16,7 @@ metaLinks:
 
 * Web3デジタル資産エコシステム構築を目標に、NEXT Market、Mini Dapp、LINE/WebベースのWeb3ウォレットサービスを提供
 * 8ヶ月間で6,500万のアクティブウォレットと160万の購入ウォレットを確保 → アジア最大規模のウォレットネットワークを保有
-* アジアデジタルドルゲートウェイに向けたテザーとの戦略的パートナーシップ締結
+* アジアデジタルドルゲートウェイのためのテザーとの戦略的パートナーシップ締結
 
 <figure><img src=".gitbook/assets/NEXT Market_2.png" alt=""><figcaption></figcaption></figure>## NEXT Market 主要機能
 

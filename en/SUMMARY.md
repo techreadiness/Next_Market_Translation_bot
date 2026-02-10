@@ -26,7 +26,7 @@
 * [NEXT Market Console User Guide](next-market-console/README.md)
   * [Item Management](next-market-console/undefined.md)
   * [B2C Product Management](next-market-console/b2c.md)
-  * [C2C Item Ability Management](next-market-console/c2c.md)
+  * [C2C Item Capability Management](next-market-console/c2c.md)
   * [C2C Preset Management](next-market-console/c2c-1.md)
   * [Mission Management](next-market-console/undefined-1/README.md)
     * [Mission Type Setup Guide](next-market-console/undefined-1/undefined.md)
